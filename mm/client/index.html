@@ -1,0 +1,30 @@
+Welcome
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script>
+  //connect to the server when we load the page
+  var socket = io();
+
+  // //tell the server to run the start function
+  // socket.emit('start');
+  //
+  // socket.emit('data', {
+  //   reason:'test data'
+  // });
+
+  // //this is the server sending messages to the client
+  // socket.on('servermsg', function(data){
+  //   console.log(data.msg);
+  // });
+
+  var logToServer = function()
+  {
+    socket.emit('log', function(){
+      console.log("logMessage");
+    });
+  }
+
+
+</script>
+
+<button onclick="logToServer()">Test Button - Log Message</button>
